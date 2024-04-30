@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Website</title>
+  <style>
+    img {
+      transform: rotate(90deg);
+      width: 1080px;
+      display: block; /* make images block-level */
+      margin: 0 0; /* center the images horizontally */
+      }
+
+    #img2 {
+      position: absolute;
+      top: 1080px; /* adjust based on the image height */
+    }
+  </style>
+</head>
+<body>
+  <img id="img1" src="image1.jpg" alt="Image 1">
+  <img id="img2" src="image2.jpg" alt="Image 2">
+
+  <script>
+    const img1 = document.getElementById('img1');
+    let left = 0;
+
+    document.addEventListener('keydown', (event) => {
+      if (event.code === 'ArrowUp') {
+        left += 10; // adjust the step size as needed
+      } else if (event.code === 'ArrowDown') {
+        left -= 10;
+      }
+      img1.style.left = `${left}px`;
+    });
+  </script>
+</body>
+</html>
